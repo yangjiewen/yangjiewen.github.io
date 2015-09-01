@@ -5,19 +5,28 @@
   
   <title>关于Hibernate中load()方法和get()方法区别 | yangchen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，分情况">
+  <meta name="description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
+找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
+null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
+个版本中get方法也会查找二级缓存！
+2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Hibernate中load()方法和get()方法区别">
 <meta property="og:url" content="http://yoursite.com/2015/09/01/关于Hibernate中load-方法和get-方法区别/index.html">
 <meta property="og:site_name" content="yangchen.blog">
-<meta property="og:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，分情况">
-<meta property="og:updated_time" content="2015-09-01T09:11:48.925Z">
+<meta property="og:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
+找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
+null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
+个版本中get方法也会查找二级缓存！
+2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
+<meta property="og:updated_time" content="2015-09-01T09:15:06.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Hibernate中load()方法和get()方法区别">
-<meta name="twitter:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，分情况">
+<meta name="twitter:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
+找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
+null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
+个版本中get方法也会查找二级缓存！
+2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
   
     <link rel="alternative" href="/atom.xml" title="yangchen.blog" type="application/atom+xml">
   
@@ -227,12 +236,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-Hibernate_get()方法">1.Hibernate get()方法</h1><pre><code>Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回<span class="literal">null</span>。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这个版本中<span class="keyword">get</span>方法也会查找二级缓存！
+        <h1 id="1-Hibernate_get()方法">1.Hibernate get()方法</h1><pre><code>Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
+找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
+<span class="literal">null</span>。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
+个版本中<span class="keyword">get</span>方法也会查找二级缓存！
 </code></pre><h1 id="2-Hibernate_load()方法">2.Hibernate load()方法</h1><pre><code>根据映射文件上类级别的lazy属性的配置<span class="params">(默认为<span class="literal">true</span>)</span>，分情况讨论：
-<span class="params">(<span class="number">1</span>)</span>若为<span class="literal">true</span>,则首先在Session缓存中查找，看看该id对应的对象是否存在，不存在则使用延迟加载，返回实体的代理类对象<span class="params">(该代理类为 实体类的子类，由CGLIB动态生成)</span>。等到具体使用该对象<span class="params">(除获取OID以外)</span>的时候，再查询二级缓存和数据库，若仍没发现符合条件的记录，则会抛出一 个ObjectNotFoundException。
-<span class="params">(<span class="number">2</span>)</span>若为<span class="literal">false</span>,就跟Hibernate get方法查找顺序一样，只是最终若没发现符合条件的记录，则会抛出一个ObjectNotFoundException。
-</code></pre><p>##总之对于get和load的根本区别<br>    一句话，hibernate对于load方法认为该数据在数据库中一定存在，可以放心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而对于get方法，hibernate一定要获取到真实的数据，否则返回null。</p>
+<span class="params">(<span class="number">1</span>)</span>若为<span class="literal">true</span>,则首先在Session缓存中查找，看看该id对应的对象是否
+存在，不存在则使用延迟加载，返回实体的代理类对象<span class="params">(该代理类为 实体类
+的子类，由CGLIB动态生成)</span>。等到具体使用该对象<span class="params">(除获取OID以外)</span>的时
+候，再查询二级缓存和数据库，若仍没发现符合条件的记录，则会抛出一 个
+ObjectNotFoundException。
 
+<span class="params">(<span class="number">2</span>)</span>若为<span class="literal">false</span>,就跟Hibernate get方法查找顺序一样，只是最终若没发现
+符合条件的记录，则会抛出一个ObjectNotFoundException。
+</code></pre><h2 id="总之对于get和load的根本区别">总之对于get和load的根本区别</h2><pre><code>一句话，hibernate对于<span class="built_in">load</span>方法认为该数据在数据库中一定存在，可以放
+心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而
+对于<span class="built_in">get</span>方法，hibernate一定要获取到真实的数据，否则返回<span class="constant">null</span>。
+</code></pre>
       
     </div>
     
