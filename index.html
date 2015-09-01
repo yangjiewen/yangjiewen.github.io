@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/java-servlet/" style="font-size: 10px;">java servlet</a>
+						<a href="/tags/Hibernate/" style="font-size: 10px;">Hibernate</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java servlet</a>
 					</div>
 				</section>
 				
@@ -187,6 +187,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-关于Hibernate中load-方法和get-方法区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/01/关于Hibernate中load-方法和get-方法区别/" class="article-date">
+  	<time datetime="2015-09-01T09:01:47.000Z" itemprop="datePublished">2015-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/关于Hibernate中load-方法和get-方法区别/">关于Hibernate中load()方法和get()方法区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Hibernate_get()方法">1.Hibernate get()方法</h1><p>Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这个版本中get方法也会查找二级缓存！</p>
+<h1 id="2-Hibernate_load()方法">2.Hibernate load()方法</h1><pre><code>根据映射文件上类级别的<span class="keyword">lazy</span>属性的配置(默认为<span class="literal">true</span>)，分情况讨论：
+</code></pre><p>(1)若为true,则首先在Session缓存中查找，看看该id对应的对象是否存在，不存在则使用延迟加载，返回实体的代理类对象(该代理类为 实体类的子类，由CGLIB动态生成)。等到具体使用该对象(除获取OID以外)的时候，再查询二级缓存和数据库，若仍没发现符合条件的记录，则会抛出一 个ObjectNotFoundException。<br>(2)若为false,就跟Hibernate get方法查找顺序一样，只是最终若没发现符合条件的记录，则会抛出一个ObjectNotFoundException。</p>
+<p>##总之对于get和load的根本区别<br>一句话，hibernate对于load方法认为该数据在数据库中一定存在，可以放心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而对于get方法，hibernate一定要获取到真实的数据，否则返回null。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hibernate/">Hibernate</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-那些servlet的基本知识你掌握了吗？" class="article article-type-post" itemscope itemprop="blogPost">
   
