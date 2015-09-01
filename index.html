@@ -114,7 +114,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hibernate/" style="font-size: 10px;">Hibernate</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java servlet</a> <a href="/tags/java框架整合/" style="font-size: 10px;">java框架整合</a>
+						<a href="/tags/Hibernate/" style="font-size: 10px;">Hibernate</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java servlet</a> <a href="/tags/java框架整合/" style="font-size: 10px;">java框架整合</a> <a href="/tags/java面试题/" style="font-size: 10px;">java面试题</a>
 					</div>
 				</section>
 				
@@ -187,6 +187,92 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-java面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/01/java面试题/" class="article-date">
+  	<time datetime="2015-09-01T14:29:25.000Z" itemprop="datePublished">2015-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/java面试题/">java面试题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="笔试：从控制台任意输入一个四位数_模拟加密过程">笔试：从控制台任意输入一个四位数 模拟加密过程</h1><h2 id="要求如下：">要求如下：</h2><ul>
+<li>1.四位数第一位可以为0；</li>
+<li>2.四位数上的每位数字加9除以10取余，再重新组成新的四位数，</li>
+<li>3.第1位和第3位对调，第2位和第4位对调，输出新的四位数</li>
+</ul>
+<h2 id="示例代码：">示例代码：</h2><pre><code><span class="keyword">public</span> <span class="keyword">class</span> Test {
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        Scanner in = <span class="keyword">new</span> Scanner(System.in);
+        System.out.println(<span class="string">"请输入一个四位数"</span>);
+        String inStr = in.next();
+        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inStr.length(); i++) {
+            arr[i] = Integer.parseInt(inStr.substring(i, i + <span class="number">1</span>));
+        }
+        <span class="keyword">int</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) {
+            arr1[i] = (arr[i] + <span class="number">9</span>) % <span class="number">10</span>;
+        }
+        <span class="keyword">int</span> temp1 = arr1[<span class="number">0</span>];
+        <span class="keyword">int</span> temp2 = arr1[<span class="number">2</span>];
+        <span class="keyword">int</span> temp3 = arr1[<span class="number">1</span>];
+        <span class="keyword">int</span> temp4 = arr1[<span class="number">3</span>];
+        arr1[<span class="number">0</span>] = temp2;
+        arr1[<span class="number">1</span>] = temp4;
+        arr1[<span class="number">2</span>] = temp1;
+        arr1[<span class="number">3</span>] = temp3;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) {
+            System.out.print(arr1[i]);
+        }
+    }
+}
+</code></pre><h2 id="以上代码就不给注释了，往往java面试的时候题目偏向于基础知识部分，所以初入职场的筒子们注意了，手写代码也是公司面试时很看重的。">以上代码就不给注释了，往往java面试的时候题目偏向于基础知识部分，所以初入职场的筒子们注意了，手写代码也是公司面试时很看重的。</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java面试题/">java面试题</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-Spring整合Hibernate" class="article article-type-post" itemscope itemprop="blogPost">
   

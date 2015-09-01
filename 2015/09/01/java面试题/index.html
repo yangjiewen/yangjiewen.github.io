@@ -3,30 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于Hibernate中load()方法和get()方法区别 | yangchen.blog</title>
+  <title>java面试题 | yangchen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
-找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
-null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
-个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
+  <meta name="description" content="笔试：从控制台任意输入一个四位数 模拟加密过程要求如下：
+1.四位数第一位可以为0；
+2.四位数上的每位数字加9除以10取余，再重新组成新的四位数，
+3.第1位和第3位对调，第2位和第4位对调，输出新的四位数
+
+示例代码：public class Test {
+
+    public static void main(String[] args) {
+        Scanner in = ne">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Hibernate中load()方法和get()方法区别">
-<meta property="og:url" content="http://yoursite.com/2015/09/01/关于Hibernate中load-方法和get-方法区别/index.html">
+<meta property="og:title" content="java面试题">
+<meta property="og:url" content="http://yoursite.com/2015/09/01/java面试题/index.html">
 <meta property="og:site_name" content="yangchen.blog">
-<meta property="og:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
-找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
-null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
-个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
-<meta property="og:updated_time" content="2015-09-01T09:15:06.452Z">
+<meta property="og:description" content="笔试：从控制台任意输入一个四位数 模拟加密过程要求如下：
+1.四位数第一位可以为0；
+2.四位数上的每位数字加9除以10取余，再重新组成新的四位数，
+3.第1位和第3位对调，第2位和第4位对调，输出新的四位数
+
+示例代码：public class Test {
+
+    public static void main(String[] args) {
+        Scanner in = ne">
+<meta property="og:updated_time" content="2015-09-01T14:39:06.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Hibernate中load()方法和get()方法区别">
-<meta name="twitter:description" content="1.Hibernate get()方法Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
-找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
-null。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
-个版本中get方法也会查找二级缓存！
-2.Hibernate load()方法根据映射文件上类级别的lazy属性的配置(默认为true)，">
+<meta name="twitter:title" content="java面试题">
+<meta name="twitter:description" content="笔试：从控制台任意输入一个四位数 模拟加密过程要求如下：
+1.四位数第一位可以为0；
+2.四位数上的每位数字加9除以10取余，再重新组成新的四位数，
+3.第1位和第3位对调，第2位和第4位对调，输出新的四位数
+
+示例代码：public class Test {
+
+    public static void main(String[] args) {
+        Scanner in = ne">
   
     <link rel="alternative" href="/atom.xml" title="yangchen.blog" type="application/atom+xml">
   
@@ -199,11 +211,11 @@ null。这个相对比较简单，也没有太大的争议。主要要说明的�
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-关于Hibernate中load-方法和get-方法区别" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java面试题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/01/关于Hibernate中load-方法和get-方法区别/" class="article-date">
-  	<time datetime="2015-09-01T09:01:47.000Z" itemprop="datePublished">2015-09-01</time>
+      <a href="/2015/09/01/java面试题/" class="article-date">
+  	<time datetime="2015-09-01T14:29:25.000Z" itemprop="datePublished">2015-09-01</time>
 </a>
     </div>
   
@@ -216,7 +228,7 @@ null。这个相对比较简单，也没有太大的争议。主要要说明的�
         
   
     <h1 class="article-title" itemprop="name">
-      关于Hibernate中load()方法和get()方法区别
+      java面试题
     </h1>
   
 
@@ -225,7 +237,7 @@ null。这个相对比较简单，也没有太大的争议。主要要说明的�
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hibernate/">Hibernate</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java面试题/">java面试题</a></li></ul>
 	</div>
 
         
@@ -236,23 +248,39 @@ null。这个相对比较简单，也没有太大的争议。主要要说明的�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-Hibernate_get()方法">1.Hibernate get()方法</h1><pre><code>Hibernate会确认一下该id对应的数据是否存在，首先在session缓存中查
-找，然后在二级缓存中查找，还没有就查询数据库，数据 库中没有就返回
-<span class="literal">null</span>。这个相对比较简单，也没有太大的争议。主要要说明的一点就是在这
-个版本中<span class="keyword">get</span>方法也会查找二级缓存！
-</code></pre><h1 id="2-Hibernate_load()方法">2.Hibernate load()方法</h1><pre><code>根据映射文件上类级别的lazy属性的配置<span class="params">(默认为<span class="literal">true</span>)</span>，分情况讨论：
-<span class="params">(<span class="number">1</span>)</span>若为<span class="literal">true</span>,则首先在Session缓存中查找，看看该id对应的对象是否
-存在，不存在则使用延迟加载，返回实体的代理类对象<span class="params">(该代理类为 实体类
-的子类，由CGLIB动态生成)</span>。等到具体使用该对象<span class="params">(除获取OID以外)</span>的时
-候，再查询二级缓存和数据库，若仍没发现符合条件的记录，则会抛出一 个
-ObjectNotFoundException。
+        <h1 id="笔试：从控制台任意输入一个四位数_模拟加密过程">笔试：从控制台任意输入一个四位数 模拟加密过程</h1><h2 id="要求如下：">要求如下：</h2><ul>
+<li>1.四位数第一位可以为0；</li>
+<li>2.四位数上的每位数字加9除以10取余，再重新组成新的四位数，</li>
+<li>3.第1位和第3位对调，第2位和第4位对调，输出新的四位数</li>
+</ul>
+<h2 id="示例代码：">示例代码：</h2><pre><code><span class="keyword">public</span> <span class="keyword">class</span> Test {
 
-<span class="params">(<span class="number">2</span>)</span>若为<span class="literal">false</span>,就跟Hibernate get方法查找顺序一样，只是最终若没发现
-符合条件的记录，则会抛出一个ObjectNotFoundException。
-</code></pre><h2 id="总之对于get和load的根本区别">总之对于get和load的根本区别</h2><pre><code>一句话，hibernate对于<span class="built_in">load</span>方法认为该数据在数据库中一定存在，可以放
-心的使用代理来延迟加载，如果在使用过程中发现了问题，只能抛异常；而
-对于<span class="built_in">get</span>方法，hibernate一定要获取到真实的数据，否则返回<span class="constant">null</span>。
-</code></pre>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        Scanner in = <span class="keyword">new</span> Scanner(System.in);
+        System.out.println(<span class="string">"请输入一个四位数"</span>);
+        String inStr = in.next();
+        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inStr.length(); i++) {
+            arr[i] = Integer.parseInt(inStr.substring(i, i + <span class="number">1</span>));
+        }
+        <span class="keyword">int</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) {
+            arr1[i] = (arr[i] + <span class="number">9</span>) % <span class="number">10</span>;
+        }
+        <span class="keyword">int</span> temp1 = arr1[<span class="number">0</span>];
+        <span class="keyword">int</span> temp2 = arr1[<span class="number">2</span>];
+        <span class="keyword">int</span> temp3 = arr1[<span class="number">1</span>];
+        <span class="keyword">int</span> temp4 = arr1[<span class="number">3</span>];
+        arr1[<span class="number">0</span>] = temp2;
+        arr1[<span class="number">1</span>] = temp4;
+        arr1[<span class="number">2</span>] = temp1;
+        arr1[<span class="number">3</span>] = temp3;
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr1.length; i++) {
+            System.out.print(arr1[i]);
+        }
+    }
+}
+</code></pre><h2 id="以上代码就不给注释了，往往java面试的时候题目偏向于基础知识部分，所以初入职场的筒子们注意了，手写代码也是公司面试时很看重的。">以上代码就不给注释了，往往java面试的时候题目偏向于基础知识部分，所以初入职场的筒子们注意了，手写代码也是公司面试时很看重的。</h2>
       
     </div>
     
@@ -261,18 +289,9 @@ ObjectNotFoundException。
     
 <nav id="article-nav">
   
-    <a href="/2015/09/01/Spring整合Hibernate/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Spring整合Hibernate,Struts2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/01/那些servlet的基本知识你掌握了吗？/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">那些servlet的基本知识你掌握了吗？</div>
+    <a href="/2015/09/01/Spring整合Hibernate/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring整合Hibernate,Struts2</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -301,7 +320,7 @@ ObjectNotFoundException。
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于Hibernate中load-方法和get-方法区别" data-title="关于Hibernate中load()方法和get()方法区别" data-url="http://yoursite.com/2015/09/01/关于Hibernate中load-方法和get-方法区别/"></div>
+	<div class="ds-thread" data-thread-key="java面试题" data-title="java面试题" data-url="http://yoursite.com/2015/09/01/java面试题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
